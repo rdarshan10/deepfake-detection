@@ -60,6 +60,46 @@ main/
 4. VGG16
 5. LFAT (Lightweight Frequency Attention Transformer)
 
+## Proposed Model: LFAT (Lightweight Frequency Attention Transformer)
+
+Our novel LFAT model is designed for efficient and accurate deepfake detection by combining:
+
+1. **Frequency Domain Analysis**: Captures manipulation artifacts in frequency space
+2. **Attention Mechanism**: Focuses on relevant frequency patterns
+3. **Lightweight Architecture**: Optimized for real-world deployment
+
+### Architecture Benefits
+- **Efficient Resource Usage**: Only 5.5M total parameters (vs 23.8M in ResNet)
+- **Compact Model Size**: 21.19 MB (vs 90.98 MB ResNet, 57.64 MB VGG16)
+- **Balanced Parameters**: 3.29M trainable vs 2.25M non-trainable parameters
+- **Memory Efficient**: 3.8x smaller than ResNet50, 2.7x smaller than VGG16
+
+### Performance Benchmarks
+
+#### Model Size and Parameters
+| Model     | Total Parameters | Trainable Params | Non-Trainable | Size (MB) |
+|-----------|------------------|------------------|---------------|-----------|
+| LFAT      | 5,555,777       | 3,297,793       | 2,257,984     | 21.19    |
+| ResNet50  | 23,850,113      | 262,401         | 23,587,712    | 90.98    |
+| VGG16     | 15,108,929      | 7,473,665       | 7,635,264     | 57.64    |
+| MobileNet | 3,360,193       | 131,329         | 3,228,864     | 12.82    |
+| CNN       | 14,839,105      | 14,839,105      | 0             | 56.61    |
+
+#### Inference Performance
+| Model     | Load Time (s) | Predict Time (s) | Total Time (s) |
+|-----------|---------------|------------------|----------------|
+| LFAT      | 1.5551       | 0.8948          | 2.4499        |
+| ResNet50  | 1.5590       | 1.2582          | 2.8172        |
+| VGG16     | 0.4124       | 0.2489          | 0.6613        |
+| MobileNet | 0.6003       | 0.3375          | 0.9378        |
+| CNN       | 0.3673       | 0.1036          | 0.4709        |
+
+### Key Advantages
+1. **Balanced Performance**: While maintaining competitive inference speed
+2. **Resource Efficiency**: Significantly smaller model size than traditional architectures
+3. **Effective Feature Learning**: Through frequency-domain analysis
+4. **Deployment Ready**: Optimized for real-world applications
+
 ## Key Features
 
 - Data preprocessing and augmentation
